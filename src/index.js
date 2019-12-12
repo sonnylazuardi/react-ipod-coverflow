@@ -242,7 +242,7 @@ const RotateWheel = props => {
                 onClick={() => {
                   const splitUrl = figmaUrl.split("/");
                   const figmaId = splitUrl[4];
-                  const myUrl = `https://p2vys.csb.app/?query=${figmaId}`;
+                  const myUrl = `https://figma-ipod-coverflow.now.sh/?query=${figmaId}`;
                   if (navigator.share) {
                     navigator
                       .share({
