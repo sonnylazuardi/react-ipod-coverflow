@@ -4,7 +4,7 @@ Inspired by these two tweets, [Figma Platformer Engine](https://twitter.com/alys
 
 [Live Version](https://figma-ipod-coverflow.now.sh/)
 
-![iPod](ipodcoverflow.png)
+<img src="ipodcoverflow.png" width="250px" style="margin: 0 auto"/>
 
 ## Features
 
