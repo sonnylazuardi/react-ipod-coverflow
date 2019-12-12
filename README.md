@@ -8,8 +8,8 @@ Inspired by these two tweets, [Figma Platformer Engine](https://twitter.com/alys
 
 ## Features
 
-- Create your own playlist
-- Share Your Playlist
+- Create your own playlist using Figma URL
+- Share Your Playlist Link
 - Coverflow slider animation (Classic Apple Style)
 - Classic iPod scroll wheel interaction
 
@@ -19,4 +19,4 @@ Deploy your own iPod project with ZEIT Now.
 
 [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/sonnylazuardi/figma-ipod-coverflow)
 
-_Live Example: https://create-react-app.now-examples.now.sh_
+_Live Example: https://figma-ipod-coverflow.now.sh/_
