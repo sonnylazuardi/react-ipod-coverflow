@@ -1,0 +1,167 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0deg, #6b778e 0%, #b4c4e0 100%);
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: #6b778e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu {
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 38px;
+  left: 125px;
+  pointer-events: none;
+}
+
+.next {
+  position: absolute;
+  top: 125px;
+  left: 230px;
+  pointer-events: none;
+}
+
+.prev {
+  position: absolute;
+  top: 125px;
+  left: 20px;
+  pointer-events: none;
+}
+
+.plays {
+  position: absolute;
+  top: 228px;
+  left: 124px;
+  pointer-events: none;
+}
+
+.play {
+  position: absolute;
+  top: 125px;
+  left: 230px;
+  pointer-events: none;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+.bg {
+  padding-top: 30px;
+}
+
+.wrapper {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.settings {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.settings-box {
+  width: 300px;
+  background: white;
+  margin: 16px auto;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.04);
+}
+
+.btn-go {
+  border: none;
+  cursor: pointer;
+}
+
+.btn-go:hover {
+  opacity: 0.9;
+}
+.btn-go:active {
+  opacity: 0.8;
+}
+
+.url-input {
+  height: 32px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 265px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 10px;
+  padding-bottom: 4px;
+  color: #6b778e;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  color: #6b778e;
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-create {
+  padding: 16px 16px;
+  text-align: center;
+  font-size: 14px;
+  background: #6b778e;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btn-share {
+  padding: 16px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b778e;
+  font-weight: bold;
+  width: 100%;
+  border: 1px solid #6b778e;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.actions {
+  display: flex;
+}
+
+.hidden {
+  height: 0;
+  position: absolute;
+  top: -9999px;
+  left: -99999px;
+  border: none;
+}
