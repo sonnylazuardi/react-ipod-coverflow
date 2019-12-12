@@ -6,6 +6,8 @@ Inspired by these two tweets, [Figma Platformer Engine](https://twitter.com/alys
 
 <img src="ipodcoverflow.png" width="250px" style="margin: 0 auto"/>
 
+<img src="figmaipod.gif" />
+
 ## Features
 
 - Create your own playlist using Figma URL
