@@ -1,29 +1,22 @@
-![React Logo](../.github/images/react.svg)
+# Figma iPod CoverFlow
 
-# Create-React-App Example
+Inspired by these two tweets, [Figma Platformer Engine](https://twitter.com/alyssaxuu/status/1104473813201444865) and [iPod - iPhone App](https://twitter.com/elvin_not_11/status/1199717678908366854), I have an idea to make a classic playlist of my favorite podcast on spotify. So I created the list of podcast in Figma, I can arrange and edit the cover as I want.
 
-This directory is a brief example of a [React](https://reactjs.org/) app that can be deployed with ZEIT Now and zero configuration.
+[Live Version](https://figma-ipod-coverflow.now.sh/)
+
+![iPod](ipodcoverflow.png)
+
+## Features
+
+- Create your own playlist
+- Share Your Playlist
+- Coverflow slider animation (Classic Apple Style)
+- Classic iPod scroll wheel interaction
 
 ## Deploy Your Own
 
-Deploy your own React project with ZEIT Now.
+Deploy your own iPod project with ZEIT Now.
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/now-examples/tree/master/create-react-app)
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/sonnylazuardi/figma-ipod-coverflow)
 
 _Live Example: https://create-react-app.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with React, you can use the [Create-React-App CLI](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to initialize the project:
-
-```shell
-$ npx create-react-app my-app
-```
-
-### Deploying From Your Terminal
-
-You can deploy your new React project with a single command from your terminal using [Now CLI](https://zeit.co/download):
-
-```shell
-$ now
-```
