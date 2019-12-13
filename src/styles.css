@@ -67,6 +67,13 @@ a {
   background: #000;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
+}
+.wrapper-inner {
+  margin-left: -80px;
+  margin-top: -28px;
+  width: 460px;
+  height: 300px;
 }
 
 .settings {
@@ -152,6 +159,7 @@ a {
   cursor: pointer;
   border-radius: 10px;
   margin-right: 8px;
+  background: white;
 }
 
 .actions {
@@ -164,4 +172,29 @@ a {
   top: -9999px;
   left: -99999px;
   border: none;
+}
+
+.title-heading {
+  color: white;
+  position: absolute;
+  bottom: 46px;
+  right: 16px;
+  left: 16px;
+  width: 268px;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.artist-heading {
+  color: white;
+  position: absolute;
+  bottom: 26px;
+  right: 16px;
+  left: 16px;
+  width: 268px;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 14px;
 }

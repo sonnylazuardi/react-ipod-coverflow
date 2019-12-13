@@ -20,16 +20,14 @@ const RotateWheel = props => {
   const rotatable = React.useRef(null);
   const [figmaUrl, setFigmaUrl] = React.useState("");
   const [images, setImages] = React.useState([]);
-  const [urls, setUrls] = React.useState([]);
+  const [data, setData] = React.useState([]);
   const [active, setActive] = React.useState(-1);
   const [showDialog, setShowDialog] = React.useState(true);
 
   const increaseActive = () => {
     setActive(active => {
-      console.log(active);
       let nextActive = active + 1;
       if (nextActive >= imageLength) nextActive = 0;
-      console.log(nextActive);
       return nextActive;
     });
   };
@@ -97,7 +95,9 @@ const RotateWheel = props => {
   React.useEffect(() => {
     const splitUrl = figmaUrl.split("/");
     const figmaId = splitUrl[4];
-    fetch(`https://api.figma.com/v1/files/${figmaId}`, {
+    const fileUrl = `https://api.figma.com/v1/files/${figmaId}`;
+    console.log("file", fileUrl);
+    fetch(fileUrl, {
       method: "get",
       headers: {
         "X-FIGMA-TOKEN": "28243-14f9dd9c-e111-4243-b375-caca1171b18c",
@@ -114,15 +114,33 @@ const RotateWheel = props => {
         const resultMap = result.document.children[0].children.sort((a, b) => {
           return a.absoluteBoundingBox.x - b.absoluteBoundingBox.x;
         });
-        const imageMap = resultMap.map(item => {
-          return item.id;
-        });
+        const imageMap = resultMap
+          .map(item => {
+            const cover = item.children.find(item => item.name === "cover");
+            if (cover) {
+              return cover.id;
+            }
+            return null;
+          })
+          .filter(item => item);
 
-        const urlMap = resultMap.map(item => {
-          return item.name;
-        });
+        const dataMap = resultMap
+          .map(item => {
+            const link = item.children.find(item => item.name === "link");
+            const title = item.children.find(item => item.name === "title");
+            const artist = item.children.find(item => item.name === "artist");
+            if (link) {
+              return {
+                link: link.characters,
+                title: title.characters,
+                artist: artist.characters,
+              };
+            }
+            return null;
+          })
+          .filter(item => item);
 
-        setUrls(urlMap);
+        setData(dataMap);
         const imagesUrl = `https://api.figma.com/v1/images/${figmaId}?ids=${imageMap.join(
           ","
         )}`;
@@ -137,34 +155,44 @@ const RotateWheel = props => {
         })
           .then(res => res.json())
           .then(result => {
-            let myImages = [];
-            Object.keys(result.images).forEach(key => {
-              myImages.push(result.images[key]);
-            });
-            console.log("RES", myImages);
-            setImages(myImages);
-            imageLength = myImages.length;
-            setActive(0);
+            if (result.images) {
+              let myImages = [];
+              Object.keys(result.images).forEach(key => {
+                myImages.push(result.images[key]);
+              });
+              console.log("RES", myImages);
+              setImages(myImages);
+              imageLength = myImages.length;
+              setActive(0);
+            }
           });
       });
   }, [figmaUrl]);
   return (
     <div className="bg">
       <div className="wrapper">
-        <Coverflow
-          displayQuantityOfSide={1}
-          height={300}
-          width={300}
-          infiniteScroll
-          active={active}
-          enableHeading={false}
-          currentFigureScale={1.8}
-          otherFigureScale={1.5}
-        >
-          {images.map((image, i) => {
-            return <img key={i} src={image} alt="" />;
-          })}
-        </Coverflow>
+        <div className="wrapper-inner">
+          <Coverflow
+            displayQuantityOfSide={1}
+            height={300}
+            width={300}
+            infiniteScroll
+            active={active}
+            enableHeading={false}
+            currentFigureScale={1}
+            otherFigureScale={1}
+          >
+            {images.map((image, i) => {
+              return <img key={i} src={image} alt="" />;
+            })}
+          </Coverflow>
+        </div>
+        <div className="title-heading">
+          {data[active] && data[active].title}
+        </div>
+        <div className="artist-heading">
+          {data[active] && data[active].artist}
+        </div>
       </div>
       <div
         style={{
@@ -200,7 +228,7 @@ const RotateWheel = props => {
           className="btn-go"
           ref={rotatable}
           onClick={e => {
-            window.location.href = urls[active];
+            window.location.href = data[active] && data[active].link;
           }}
         >
           {" "}
